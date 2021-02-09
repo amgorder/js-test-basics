@@ -46,13 +46,28 @@ function testGrader(score, possible) {
 function timeOfDayGreeting(hour) {
     // you code below
 
+if(hour >= 11 && hour <= 5){
+    return "Good Morning"
+}else if(hour >= 17 && hour <= 12){
+    return "Good Afternoon"
+}else if(hour >= 18 && hour <= 21){
+    return "Good Evening"
+}else{ 
+    return "Good Night"
+}
+
 }
 
 //4. Write a function that will take in a number and return 'fever' if it indicates a fever (over 98.6) and additionally if the person should go to the hospital (at or above 103) 'fever go to hospital' (hint: try this with string concatenation), if it is under return 'no fever'
 function isFever(temp) {
-
+if (temp > 98.6 && temp < 103){
+    return "fever"
+}else if(temp >= 103){
+    return "fever" + " " + "go to hospital"
+}else{
+    return "no" + " " + "fever"
 }
-
+}
 //5. Write a function that takes in a car object, if it is not moving then return true
 let myCar = {
     make: "Ford",
@@ -62,7 +77,11 @@ let myCar = {
 }
 
 function isStopped(car) {
-
+    if (myCar.moving == true) {
+        return false
+    } else if(myCar.moving == false){
+        return true
+    }
 }
 
 //6. Write a function that returns true if a dish is yours and is dirty, or false if one of the statements is false
@@ -72,6 +91,10 @@ let dish = {
     isDirty: true
 }
 
-function washDish(dish) {
-
+function washDish(dish){
+if(dish.yourDish == true && dish.isDirty == true){
+    return true
+}else{
+    return false
+}
 }
